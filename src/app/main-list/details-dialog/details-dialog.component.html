@@ -1,0 +1,24 @@
+<div mat-dialog-title>
+  <h2>{{title}}</h2>
+</div>
+<detail-book mat-dialog-content [id]="data" [(title)]="title"></detail-book>
+<div mat-dialog-actions class="mat-dialog-actions">
+  <ng-container *ngIf="borrowing==false" >
+    <button mat-button [mat-dialog-close]="data">Close</button>
+    <button mat-button *ngIf="this.credentials.token" (click)="borrowing=true"> Get book </button>
+  </ng-container>
+  <ng-container *ngIf="borrowing">
+    <div class="input-group">
+      <mat-form-field appearance="fill" [formGroup]="datetime">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="date" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+        <mat-datepicker #date></mat-datepicker>
+      </mat-form-field>
+      <div>
+        <button mat-button (click)="borrowing=false">Cancel</button>
+        <button mat-button (click)="borrow()">Borrow</button>
+      </div>
+    </div>
+  </ng-container>
+</div>

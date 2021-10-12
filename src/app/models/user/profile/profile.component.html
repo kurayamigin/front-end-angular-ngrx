@@ -1,0 +1,36 @@
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Contact </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="input-group">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input type="text" matInput readonly value="{{profile.firstname + ' ' + profile.lastname}}" id="firstname" placeholder="Name">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>email</mat-label>
+            <input type="email" matInput value="{{profile.email}}" id="email" readonly placeholder="Insert email">
+          </mat-form-field>
+        </div>
+        <div class="input-group">
+          <div class="profile-input">
+            <img class="profile-icon" src="assets/profile_upload.png"/>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <mat-form-field>
+          <mat-label>Phone</mat-label>
+          <input matInput readonly value="{{profile.phone}}" type="text" >
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <a mat-button (click)="exit()"> Cancel </a>
+        <button mat-button (click)="logout()" color="warn"> Log out </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

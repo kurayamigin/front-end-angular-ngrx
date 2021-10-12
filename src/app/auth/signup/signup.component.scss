@@ -1,0 +1,57 @@
+$gap : 2vw;
+$padding : 4vw;
+$width:(100vw - $gap*2 - $padding*2);
+$bp : (
+  mobile : 360px,
+  tablet : 640px,
+  desktop : 1080px,
+);
+
+.row {
+  display: flex;
+  gap: $gap;
+  justify-content: center;
+  flex-direction: row;
+  padding: 2vh 4vw;
+  width: 90%;
+}
+
+.input-group {
+  display: flex;
+  gap: $gap;
+  text-align: left;
+  justify-content: left;
+  flex-direction: column;
+  padding: 2vh 4vw;
+  height: 100%;
+  width: 40%;
+}
+.input-group mat-form-field {
+  width: 100%;
+}
+
+.profile-icon {
+  width: 120px;
+}
+.profile-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.md-button {
+  padding: 0 6px 0 6px;
+  margin: 6px 8px 6px 8px;
+  min-width: 100px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration:none;
+  border: none;
+  outline: none;
+}
+.md-button.md-raised:not([disabled]) {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}

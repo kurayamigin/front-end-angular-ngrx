@@ -1,0 +1,28 @@
+<div class="container column">
+  <div class="title"></div>
+  <!-- por cada categoría -->
+  <ng-container *ngFor="let category of this.categories$ | async;let i = index" >
+    <div class="container column">
+      <h2> {{category.name}} </h2>
+      <div class="box-cards">
+        <ng-container *ngFor="let book of this.books$ | async" >
+          <div *ngIf="book.categoriesIds.indexOf(category.id)>-1">
+            <mat-card>
+              <mat-card-title>
+                <h3> {{book.title}} </h3>
+              </mat-card-title>
+            <mat-card-content class="book-details" (click)="bookDetails(book)">
+              <img media="(max-width: 799px)" class="cover" [src]="book.coverUrl">
+            </mat-card-content>
+              <mat-card-footer>
+                <p> {{book.publishedYear}} </p>
+              </mat-card-footer>
+            </mat-card>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+
+
+</div>

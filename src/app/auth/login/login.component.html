@@ -1,0 +1,35 @@
+<div id="signup" class="content">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Log in</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="form" role="form" (ngSubmit)="login()" [formGroup]="form">
+        <div class="column">
+        <div class="input-group">
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input type="text" matInput id="username" placeholder="Insert username" formControlName="username">
+            <mat-error *ngIf="form.controls['username'].hasError('required')">
+              Username is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="input-group">
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput id="password" placeholder="Insert password" formControlName="password">
+            <mat-error *ngIf="form.controls['password'].hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        </div>
+        <div class="row">
+          <a mat-button (click)="exit()"> Cancel </a>
+          <button mat-button type="submit"> Continue </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

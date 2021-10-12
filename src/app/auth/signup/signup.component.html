@@ -1,0 +1,77 @@
+<div id="signup" class="content">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Sign Up </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="form" role="form" (ngSubmit)="submit()" [formGroup]="form">
+        <div class="row">
+        <div class="input-group">
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input type="text" matInput id="username" placeholder="Insert username" formControlName="username">
+          <mat-error *ngIf="form.controls['username'].hasError('required')">
+            Username is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>email</mat-label>
+          <input type="email" matInput id="email" placeholder="Insert email" formControlName="email">
+          <mat-error *ngIf="form.controls['email'].hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="form.controls['email'].hasError('email')">
+            Incorrect email
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput id="password" placeholder="Insert password" formControlName="password">
+          <mat-error *ngIf="form.controls['password'].hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        </div>
+        <div class="input-group">
+          <div class="profile-input">
+          <img class="profile-icon" src="assets/profile_upload.png"/>
+            <input [hidden]="true" id="profile-image" type="file" />
+            <label for="profile-image" class="md-button md-raised color-primary">Upload</label>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="input-group">
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input type="text" matInput id="firstname" placeholder="Name" formControlName="firstname">
+              <mat-error *ngIf="form.controls['firstname'].hasError('required')">
+                Name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+            <mat-label>Last name</mat-label>
+            <input type="text" matInput id="lastname" placeholder="Last name" formControlName="lastname">
+            <mat-error *ngIf="form.controls['lastname'].hasError('required')">
+              Last name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          </div>
+          <div class="input-group">
+            <mat-form-field>
+              <mat-label>Phone</mat-label>
+              <input matInput maxlength="10" placeholder="10 digits number" type="text" formControlName="phone">
+              <mat-error *ngIf="form.controls['phone'].hasError('pattern')">
+                Phone is <strong>invalid</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <a mat-button (click)="exit()"> Cancel </a>
+          <button mat-button type="submit"> Submit </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

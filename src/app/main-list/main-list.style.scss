@@ -1,0 +1,47 @@
+$gap : 4vw;
+$padding : 4vw;
+$width:(100vw - $gap*2 - $padding*2);
+$bp : (
+  mobile : 360px,
+  tablet : 640px,
+  desktop : 1080px,
+);
+
+:host {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+  padding: 0 $padding;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container.column {
+  flex-direction: column;
+  padding: 2vh 4vw;
+  height: 100%;
+  width: (100vw - 8vw);
+}
+
+.box-cards {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  overflow-y: auto;
+
+  gap: $gap;
+  padding: 0 $padding;
+  justify-content: left;
+}
+
+.cover {
+  width: 178px;
+  height: 280px;
+  border-radius: 4px;
+}

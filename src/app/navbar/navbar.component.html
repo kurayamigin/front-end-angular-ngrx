@@ -1,0 +1,24 @@
+<mat-toolbar class="toolbar" color="primary" role="banner">
+  <div class="container" *ngIf="!(isAuthenticate$ | async)">
+    <div class="box left"></div>
+    <div class="box right">
+    <a mat-button class="mat-focus-indicator" [routerLink]="['/auth/login']"> Log in  </a>
+    <a mat-button [routerLink]="['/auth/signup']"> Sign up </a>
+    </div>
+  </div>
+  <div class="container" *ngIf="isAuthenticate$ | async">
+    <div class="box left search">
+      <mat-form-field  appearance="fill">
+        <mat-label> Search </mat-label>
+        <mat-icon matSuffix>search</mat-icon>
+        <input matInput type="search"/>
+      </mat-form-field>
+    </div>
+    <div class="box right">
+      <a (click)="profile()">
+        <img class="profile-icon" src="assets/icons8-male-user-100.png"/>
+      </a>
+    </div>
+
+  </div>
+</mat-toolbar>
